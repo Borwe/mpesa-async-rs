@@ -9,6 +9,7 @@ edition = "2021"
 reqwest = { version = "0.11", features = ["json"] }
 tokio = { version = "1", features = ["full"] }
 base64 = "0.13.0"
+serde = { version = "1.0.137", features= [ "derive" ] }
 
 [dev-dependencies]
 dotenv = "0.15.0"
