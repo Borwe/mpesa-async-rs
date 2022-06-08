@@ -5,6 +5,8 @@ use serde::{Deserialize, Serialize};
 const SANDBOX_OAUTH_URL: &str = "https://sandbox.safaricom.co.ke/oauth/v1/generate";
 const MAIN_OAUTH_URL: &str = "https://safaricom.co.ke/oauth/v1/generate";
 
+pub mod c2b;
+
 pub struct Client {
     web_client: WebClient,
     pub req_secs: Option<u32>,

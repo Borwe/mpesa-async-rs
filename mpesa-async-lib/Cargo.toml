@@ -13,3 +13,7 @@ serde = { version = "1.0.137", features= [ "derive" ] }
 
 [dev-dependencies]
 dotenv = "0.15.0"
+
+[features]
+mpesa_obj = ["serde/derive"]
+default = ["mpesa_obj"]
