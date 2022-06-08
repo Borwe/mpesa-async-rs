@@ -1,15 +1,5 @@
-[package]
-name = "mpesa-async"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-reqwest = { version = "0.11", features = ["json"] }
-tokio = { version = "1", features = ["full"] }
-base64 = "0.13.0"
-serde = { version = "1.0.137", features= [ "derive" ] }
-
-[dev-dependencies]
-dotenv = "0.15.0"
+[workspace]
+members = [
+ "mpesa-async-lib",
+ "mpesa-async-server"
+]

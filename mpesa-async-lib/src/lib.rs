@@ -28,7 +28,10 @@ mod error{
 }
 
 impl Client {
-    /// Create a new client Object
+    /// Create a new client Object, by using cons_key and cons_secret
+    /// which are strings, that can be provided from Safaricom
+    /// or use Daraja sandbox https://developer.safaricom.co.ke/ to get
+    /// them
     pub async fn new(cons_key: String, cons_secret: String, test: bool)
         -> Result<Client, error::ClientCreationError>{
         let mut client = Client{ 
@@ -76,7 +79,6 @@ impl Client {
             let output = response
                 .json::<GeneratorReply>()
                 .await.unwrap();
-            println!("CLIENT SUCCESS: {:?}",output);
             client.access_token = Some(output.access_token);
             client.req_secs = Some(output
                    .expires_in.parse::<u32>().unwrap());
